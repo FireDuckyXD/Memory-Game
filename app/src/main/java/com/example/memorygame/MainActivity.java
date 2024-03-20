@@ -3,6 +3,7 @@ package com.example.memorygame;
 import android.content.Intent;
 import android.graphics.drawable.shapes.Shape;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,10 +34,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         cardViews = new ImageView[16];
+
         for (int i = 0; i < 16; i++) {
-            int resourceId = getResources().getIdentifier("imageView" + (i + 1), "id", getPackageName());
+            String cardName = "imageView" + (i + 1);
+            Log.d("XXXX", "cardName = " + cardName);
+            int resourceId = getResources().getIdentifier(cardName, "id", getPackageName());
+            Log.d("XXXX", "resourceId = " + resourceId);
             cardViews[i] = findViewById(resourceId);
+            Log.d("XXXX", cardViews[i].toString());
+
         }
+
+        Log.d("XXXX", "after for loop");
 
 
         shuffleCards();
