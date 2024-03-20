@@ -8,30 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.memorygame.R;
-import com.google.android.material.imageview.ShapeableImageView;
-import com.google.firebase.auth.FirebaseAuth;
+
 
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseAuth auth;
-    GoogleSignInClient googleSignInClient;
-    ShapeableImageView imageView;
-    TextView name, mail;
-
-    private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-        @Override
-        public void onActivityResult(ActivityResult result) {
-
-        }
-    })
-
 
     private ImageView[] cardViews;
     private int[] cardImages = {R.drawable.dvir, R.drawable.dvir, R.drawable.hacham, R.drawable.hacham,
